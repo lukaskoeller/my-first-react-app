@@ -1,3 +1,7 @@
+# My first React App
+
+This app follows the introductional Tutorial of React. See: [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
