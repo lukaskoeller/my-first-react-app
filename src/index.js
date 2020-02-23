@@ -51,13 +51,14 @@ class Game extends React.Component {
                 { squares: Array(9).fill(null) },
             ],
             stepNumber: 0,
+            maxStep: 0,
             xIsNext: true,
         }
     }
 
     handleClick(i) {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
-        const current = history[history.length - 1];
+        const current = history[this.state.stepNumber];
         const squares = current.squares.slice();
         if(calculateWinner(squares) || squares[i]) {
             return;
@@ -68,6 +69,7 @@ class Game extends React.Component {
                 squares: squares,
             }]),
             stepNumber: history.length,
+            maxStep: history.length,
             xIsNext: !this.state.xIsNext,
         })
     }
@@ -75,6 +77,7 @@ class Game extends React.Component {
     jumpTo(step) {
         this.setState({
             stepNumber: step,
+            maxStep: step >= this.state.maxStep ? step : this.state.maxStep,
             xIsNext: (step % 2) === 0,
         });
     }
@@ -113,6 +116,8 @@ class Game extends React.Component {
             <div className="game-info">
             <div>{status}</div>
             <ol>{moves}</ol>
+            <input type="range" disabled={!(this.state.stepNumber)} step="1" min="0" max={this.state.maxStep} value={this.state.stepNumber} onChange={e => this.jumpTo(parseInt(e.target.value))}></input>
+            <div>{this.state.stepNumber ? `Step #${this.state.stepNumber}` : 'Start'}</div>
             </div>
         </div>
         );
