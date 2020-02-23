@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -146,6 +147,16 @@ function calculateWinner(squares) {
 }
 
 // ========================================
+
+Square.propTypes = {
+    onClick: PropTypes.func,
+    value: PropTypes.string,
+};
+
+Board.propTypes = {
+    squares: PropTypes.array,
+    onClick: PropTypes.func,
+};
 
 ReactDOM.render(
     <Game />,
