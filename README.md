@@ -4,6 +4,27 @@ This app follows the introductional Tutorial of React. See: [Tutorial: Intro to 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Modifications
+
+The code was modified from the Tutorial's code as follows:
+
+Before:<br />
+```
+    if (winner) {
+      status = 'Winner: ' + winner;
+    } else {
+      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    }
+```
+After:<br />
+```
+    if(winner) {
+        status = `Winner is: ${winner}`
+    } else {
+        status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+    }
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
