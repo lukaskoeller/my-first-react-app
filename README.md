@@ -1,29 +1,23 @@
-# My first React App
+# Tic Tac Toe React
 
-This app follows the introductional Tutorial of React. See: [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html).
+This app follows the introductional Tutorial of React ([Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)) and is my first React App. I added some **features** and made the **code cleaner**.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Modifications
+## Code Mods
 
 The code was modified from the Tutorial's code as follows:
+* Using **String Interpolation** (e.g. `${string}`) with Template Literals instead of normal strings.
+* Renaming classes according to **BEM**.
+* Using **CSS Grid** instead of Flexbox to get rid off div-rows (`<div className="board-row">`).
 
-Before:<br />
-```
-    if (winner) {
-      status = 'Winner: ' + winner;
-    } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-    }
-```
-After:<br />
-```
-    if(winner) {
-        status = `Winner is: ${winner}`
-    } else {
-        status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
-    }
-```
+## Added Features
+
+The following features were added to the game:
+* A range slider to enable a smooth _Time Travel_ through the game.
+* New styles to make the game look simple but nice.
+* A 'New Game' button to immediately start a new game.
+* A new status if the game ends in a tie.
 
 ## Available Scripts
 
