@@ -1,5 +1,7 @@
 # Tic Tac Toe React
 
+![TicTac](tic-tac-toe.jpg?raw=true "Gamee")
+
 This app follows the introductional Tutorial of React ([Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)) and is my first React App. I added some **features** and made the **code cleaner**.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
