@@ -103,31 +103,34 @@ class Game extends React.Component {
         }
 
         return (
-        <div className="game">
-            <div className="game__board">
-            <Board
-                squares={current.squares}
-                onClick={(i) => this.handleClick(i)}
-            />
-            </div>
-            <div className="game-info">
-                <div className="game-info__box">
-                    <label className="label">Status</label>
-                    {status}
+        <div>
+            <h1 className="title">Tic Tac Toe</h1>
+            <div className="game">
+                <div className="game__board">
+                <Board
+                    squares={current.squares}
+                    onClick={(i) => this.handleClick(i)}
+                />
                 </div>
-                <div className="game-info__box">
-                    <label className="label">Protocol</label>
-                    <select onChange={(e) => this.jumpTo(parseInt(e.target.value))} value={this.state.stepNumber}>{moves}</select>
+                <div className="game-info">
+                    <div className="game-info__box">
+                        <label className="label">Status</label>
+                        {status}
+                    </div>
+                    <div className="game-info__box">
+                        <label className="label">Protocol</label>
+                        <select onChange={(e) => this.jumpTo(parseInt(e.target.value))} value={this.state.stepNumber}>{moves}</select>
+                    </div>
+                    <div className="game-info__box">
+                        <label className="label">Time Machine</label>
+                        <input type="range" disabled={!(this.state.stepNumber)} step="1" min="0" max={this.state.maxStep} value={this.state.stepNumber} onChange={e => this.jumpTo(parseInt(e.target.value))}></input>
+                    </div>
+                    <div className="game-info__box">
+                        <label className="label">Current Step</label>
+                        {this.state.stepNumber ? `Step #${this.state.stepNumber}` : 'Start'}
+                    </div>
+                    <div className="game-info__box game-info__box--btn" onClick={() => this.jumpTo(0)}>New Game</div>
                 </div>
-                <div className="game-info__box">
-                    <label className="label">Time Machine</label>
-                    <input type="range" disabled={!(this.state.stepNumber)} step="1" min="0" max={this.state.maxStep} value={this.state.stepNumber} onChange={e => this.jumpTo(parseInt(e.target.value))}></input>
-                </div>
-                <div className="game-info__box">
-                    <label className="label">Current Step</label>
-                    {this.state.stepNumber ? `Step #${this.state.stepNumber}` : 'Start'}
-                </div>
-                <div className="game-info__box game-info__box--btn" onClick={() => this.jumpTo(0)}>New Game</div>
             </div>
         </div>
         );
