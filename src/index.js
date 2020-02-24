@@ -110,19 +110,19 @@ class Game extends React.Component {
             </div>
             <div className="game-info">
                 <div className="game-info__box">
-                    <label class="label">Status</label>
+                    <label className="label">Status</label>
                     {status}
                 </div>
                 <div className="game-info__box">
-                    <label class="label">Protocol</label>
+                    <label className="label">Protocol</label>
                     <select onChange={(e) => this.jumpTo(parseInt(e.target.value))} value={this.state.stepNumber}>{moves}</select>
                 </div>
                 <div className="game-info__box">
-                    <label class="label">Time Machine</label>
+                    <label className="label">Time Machine</label>
                     <input type="range" disabled={!(this.state.stepNumber)} step="1" min="0" max={this.state.maxStep} value={this.state.stepNumber} onChange={e => this.jumpTo(parseInt(e.target.value))}></input>
                 </div>
                 <div className="game-info__box">
-                    <label class="label">Current Step</label>
+                    <label className="label">Current Step</label>
                     {this.state.stepNumber ? `Step #${this.state.stepNumber}` : 'Start'}
                 </div>
             </div>
