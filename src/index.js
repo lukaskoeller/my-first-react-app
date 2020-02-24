@@ -97,7 +97,7 @@ class Game extends React.Component {
         if(winner) {
             status = `Winner is: ${winner}`
         } else {
-            status = this.state.xIsNext ? 'X' : 'O';
+            status = `Next Player: ${this.state.xIsNext ? 'X' : 'O'}`;
         }
 
         return (
@@ -110,7 +110,7 @@ class Game extends React.Component {
             </div>
             <div className="game-info">
                 <div className="game-info__box">
-                    <label class="label">Next Player</label>
+                    <label class="label">Status</label>
                     {status}
                 </div>
                 <div className="game-info__box">
@@ -122,7 +122,7 @@ class Game extends React.Component {
                     <input type="range" disabled={!(this.state.stepNumber)} step="1" min="0" max={this.state.maxStep} value={this.state.stepNumber} onChange={e => this.jumpTo(parseInt(e.target.value))}></input>
                 </div>
                 <div className="game-info__box">
-                    <label class="label">Status</label>
+                    <label class="label">Current Step</label>
                     {this.state.stepNumber ? `Step #${this.state.stepNumber}` : 'Start'}
                 </div>
             </div>
