@@ -5,7 +5,7 @@ import './index.css';
 
 function Square(props) {
     return (
-        <button className="square" onClick={ props.onClick }>
+        <button className="game__square" onClick={ props.onClick }>
             {props.value}
         </button>
     );
@@ -23,22 +23,16 @@ class Board extends React.Component {
 
     render() {
         return (
-        <div>
-            <div className="board-row">
+        <div className="game__board-component">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
-            </div>
-            <div className="board-row">
             {this.renderSquare(3)}
             {this.renderSquare(4)}
             {this.renderSquare(5)}
-            </div>
-            <div className="board-row">
             {this.renderSquare(6)}
             {this.renderSquare(7)}
             {this.renderSquare(8)}
-            </div>
         </div>
         );
     }
@@ -93,9 +87,9 @@ class Game extends React.Component {
                 `Go to move #${move}` :
                 'Go to game start';
             return (
-                <li key={move}>
-                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
-                </li>
+                <option key={move} value={move}>
+                    {desc}
+                </option>
             )
         })
 
@@ -103,22 +97,34 @@ class Game extends React.Component {
         if(winner) {
             status = `Winner is: ${winner}`
         } else {
-            status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+            status = this.state.xIsNext ? 'X' : 'O';
         }
 
         return (
         <div className="game">
-            <div className="game-board">
-            <Board 
+            <div className="game__board">
+            <Board
                 squares={current.squares}
                 onClick={(i) => this.handleClick(i)}
             />
             </div>
             <div className="game-info">
-            <div>{status}</div>
-            <ol>{moves}</ol>
-            <input type="range" disabled={!(this.state.stepNumber)} step="1" min="0" max={this.state.maxStep} value={this.state.stepNumber} onChange={e => this.jumpTo(parseInt(e.target.value))}></input>
-            <div>{this.state.stepNumber ? `Step #${this.state.stepNumber}` : 'Start'}</div>
+                <div className="game-info__box">
+                    <label class="label">Next Player</label>
+                    {status}
+                </div>
+                <div className="game-info__box">
+                    <label class="label">Protocol</label>
+                    <select onChange={(e) => this.jumpTo(parseInt(e.target.value))} value={this.state.stepNumber}>{moves}</select>
+                </div>
+                <div className="game-info__box">
+                    <label class="label">Time Machine</label>
+                    <input type="range" disabled={!(this.state.stepNumber)} step="1" min="0" max={this.state.maxStep} value={this.state.stepNumber} onChange={e => this.jumpTo(parseInt(e.target.value))}></input>
+                </div>
+                <div className="game-info__box">
+                    <label class="label">Status</label>
+                    {this.state.stepNumber ? `Step #${this.state.stepNumber}` : 'Start'}
+                </div>
             </div>
         </div>
         );
