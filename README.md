@@ -1,8 +1,10 @@
-# Tic Tac Toe React
+# Tic Tac Toe - React
 
 ![Tic-Tac-Toe Game](tic-tac-toe-game.png?raw=true "Tic-Tac-Toe Game")
 
 This app follows the introductional Tutorial of React ([Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)) and is my first React App. I added some **features** and made the **code cleaner**.
+
+For the original version of the Game as created in the Tutorial see [Tutorial: Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
