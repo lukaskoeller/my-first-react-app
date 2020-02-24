@@ -96,6 +96,8 @@ class Game extends React.Component {
         let status;
         if(winner) {
             status = `Winner is: ${winner}`
+        } else if (!winner && this.state.stepNumber === 9) { 
+            status = 'It\'s a draw!'; 
         } else {
             status = `Next Player: ${this.state.xIsNext ? 'X' : 'O'}`;
         }
@@ -125,6 +127,7 @@ class Game extends React.Component {
                     <label className="label">Current Step</label>
                     {this.state.stepNumber ? `Step #${this.state.stepNumber}` : 'Start'}
                 </div>
+                <div className="game-info__box game-info__box--btn" onClick={() => this.jumpTo(0)}>New Game</div>
             </div>
         </div>
         );
