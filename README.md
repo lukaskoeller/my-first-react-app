@@ -1,6 +1,6 @@
 # Tic Tac Toe React
 
-![TicTac](tic-tac-toe.jpg?raw=true "Gamee")
+![Tic-Tac-Toe Game](tic-tac-toe-game.jpg?raw=true "Tic-Tac-Toe Game")
 
 This app follows the introductional Tutorial of React ([Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)) and is my first React App. I added some **features** and made the **code cleaner**.
 
