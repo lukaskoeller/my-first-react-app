@@ -8,12 +8,13 @@ For the original version of the Game as created in the Tutorial, see [Tutorial: 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Code Mods
+## Code Modifications
 
 The code was modified from the Tutorial's code as follows:
 * Using **String Interpolation** (e.g. `${string}`) with Template Literals instead of normal strings.
 * Renaming classes according to **BEM**.
 * Using **CSS Grid** instead of Flexbox to get rid off div-rows (`<div className="board-row">`).
+* Replaced hard-coded `<Square />` components by a for-loop.
 
 ## Added Features
 
